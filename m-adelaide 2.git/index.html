@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Bar</title>
+
+    <link rel="stylesheet" href="js/bower/jquery-mobile/css/themes/default/jquery.mobile.css" />
+    <link rel="stylesheet" href="css/build/style.min.css" />
+    <script src="js/build/production.min.js"></script>
+    
+    <!-- Smithys weather app -->
+    <script src="js/smithy-weather.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="images/icon.png"/>  
+    <meta name="apple-mobile-web-app-capable" content="yes" />  
+
+</head>
+<body>
+    <!-- This is the first page -->
+    <section id="firstpage" data-role="page">
+        <div data-role="panel" id="left-panel" data-theme="b">
+            <ul data-theme="d" data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>  
+                <li data-role="list-divider">Select a City</li>
+                    <li ><a href="#" class="city" data-rel="close">Current Location</a></li>
+                    <li ><a href="#" class="city" data-rel="close">Chicago</a></li>
+                    <li ><a href="#" class="city" data-rel="close">Los Angeles</a></li>
+                    <li ><a href="#" class="city" data-rel="close">Miami</a></li>
+                    <li ><a href="#" class="city" data-rel="close">New York</a></li>
+                    <li ><a href="#" class="city" data-rel="close">San Francisco</a></li>
+            </ul>
+        </div> <!-- /panel -->
+        <header data-role="header" data-theme="a">
+            <h1>University of Adelaide</h1>
+            <a href="#left-panel" data-icon="bars" data-role="button"  data-iconpos="notext" data-iconshadow="false">Menu</a>
+        </header> 
+        <div class="ui-content">
+
+             <!-- Smithys weather app -->
+             <ul data-role="listview" data-divider-theme="a" class="weather-content ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li data-role="list-divider">Weather</li>
+                <li> 
+                    <h1 id="current_temp" class="icon" data-icon="B">65&#176;F</h1>
+                    <p id="current_summary">Partly Cloudy</p>
+                    <p id="location">Current Location</p> 
+                </li>
+              </ul>
+
+            <p>This is page 1</p>
+            <a href="externalpage.html">load an external page</a>
+
+            <!-- API function -->
+            <button onclick="doChange('#secondpage')">Go to Page 2 Via Script</button>
+            
+            <!-- mobileinit event -->
+            <p><a href="externalpage1.html">Missing external page</a></p>
+
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+                <li><a href="index.html">
+                <h2>Stephen Weber</h2>
+                <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                    <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                </a></li>
+                <li><a href="index.html">
+                <h2>jQuery Team</h2>
+                <p><strong>Boston Conference Planning</strong></p>
+                <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                    <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                </a></li>
+                <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+                <li><a href="index.html">
+                <h2>Avery Walker</h2>
+                <p><strong>Re: Dinner Tonight</strong></p>
+                <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                    <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                </a></li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section id="secondpage" data-role="page">
+        <header data-role="header" data-theme="a">
+            <h1>University of Adelaide</h1>
+        </header> 
+        <div class="ui-content">
+            <p>This is page 2</p>
+            <!-- API function -->
+            <button onclick="doChange('#firstpage')">Go to Page 1 Via Script</button>
+            <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+                <li><a href="#">
+                    <img src="images/album-bb.jpg">
+                <h2>Broken Bells</h2>
+                <p>Broken Bells</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                </li>
+                <li><a href="#">
+                    <img src="images/album-hc.jpg">
+                <h2>Warning</h2>
+                <p>Hot Chip</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                </li>
+                <li><a href="#">
+                    <img src="images/album-p.jpg">
+                <h2>Wolfgang Amadeus Phoenix</h2>
+                <p>Phoenix</p></a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                </li>
+            </ul>
+            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+                <h3>Purchase Album?</h3>
+            <p>Your download will begin immediately on your mobile device when you purchase.</p>
+                <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Buy: $10.99</a>
+                <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+            </div>
+
+            <form method="get" action="">
+              <fieldset class="ui-field-contain">
+                <label for="select1">Custom Select Menu:</label>
+                    <select name="select1" id="select1" data-native-menu="false">
+                    <option>Choose One:</option>
+                    <optgroup label="First Group">
+                      <option value="value1">Value 1</option>
+                      <option value="value2" disabled="disabled">Value 2</option>
+                      <option value="value3">Value 3</option>
+                      <option value="value4">Value 4</option>
+                    </optgroup>
+                    <optgroup label="Second Group">
+                      <option value="value5">Value 5</option>
+                      <option value="value6">Value 6</option>
+                      <option value="value7">Value 7</option>
+                      <option value="value8">Value 8</option>
+                    </optgroup>
+                  </select>
+             </fieldset>
+
+            <fieldset class="ui-field-contain">
+                <label for="select1">Multiple Enabled:</label>
+                    <select name="select1" id="select2" multiple="multiple" data-native-menu="false">
+                    <option>Select Options:</option>
+                    <option value="value1">Value 1</option>
+                    <option value="value2">Value 2</option>
+                    <option value="value3">Value 3</option>
+                    <option value="value4">Value 4</option>
+                    <option value="value5">Value 5</option>
+                    <option value="value6">Value 6</option>
+                  </select>
+            </fieldset>
+        </form>
+
+
+        </div>
+    </section>
+    <section id="thirdpage" data-role="page">
+        <header data-role="header" data-theme="a">
+            <h1>University of Adelaide</h1>
+        </header> 
+        <div class="ui-content">
+            <p>This is page 3</p>
+            <h2>Unordered List Example</h2>
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter Countries...">
+                <li><a href="#"><img src='images/us.png' class='ui-li-icon'/>United States</a></li>
+                <li><a href="#"><img src='images/gb.png' class='ui-li-icon'/>Great Britain</a></li>
+                <li><a href="#"><img src='images/de.png' class='ui-li-icon'/>Germany</a></li>
+                <li><a href="#"><img src='images/gf.png' class='ui-li-icon'/>France</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="fourthpage" data-role="page">
+        <header data-role="header" data-theme="a">
+            <h1>University of Adelaide</h1>
+        </header> 
+        <div class="ui-content">
+            <p>This is page 4</p>
+            <h2>Wine Regions</h2>
+          <ul data-role="listview" data-divider-theme="b">
+            <li data-role="list-divider">America</li>
+            <li>California</li>
+            <li>
+                <a href="#winedetails">Wine #1</a>
+                <a href="#winenotes">Wine Notes</a>
+            </li>
+            <li>
+                <a href="#winedetails">Wine #2</a>
+                <a href="#winenotes">Wine Notes</a>
+            </li>
+            <li>
+                <a href="#winedetails">Wine #3</a>
+                <a href="#winenotes">Wine Notes</a>
+            </li>
+            <li>Washington</li>
+            <li>Oregon</li>
+            <li data-role="list-divider">France</li>
+            <li>Burgundy</li>
+            <li>Bordeaux</li>
+            <li>Languedoc</li>
+            <li data-role="list-divider">Italy</li>
+            <li>Tuscany</li>
+            <li>Sicily</li>
+            <li>Lombardia</li>
+          </ul>
+        </div>
+    </section>
+
+     <section id="fifthpage" data-role="page">
+        <header data-role="header" data-theme="a">
+            <h1>University of Adelaide</h1>
+        </header> 
+        <div class="ui-content">
+            <p>This is page 5</p>
+            <p>Nested Collapsible blocks:</p>
+            <div data-role="collapsible">
+                <h1>I'm a collapsible block</h1>
+                <p>I'm the content in the collapsible block.</p>
+                <div data-role="collapsible">
+                    <h1>I'm a nested collapsible block</h1>
+                    <p>I'm the content in the nested collapsible block.</p>
+                </div>
+            </div>
+            <p>Collapsible set with 4 sections:</p>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h1>Section 1</h1>
+                    <p>I'm the content in section 1.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Section 2</h1>
+                    <p>I'm the content in section 2.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Section 3</h1>
+                    <p>I'm the content in section 3.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Section 4</h1>
+                    <p>I'm the content in section 4.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="winedetails" data-role="page">
+        <header data-role="header">
+            <h1>Wine Details</h1>
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Back</a>
+        </header>
+        <div class="ui-content">
+        <p>This page contains information about the wine.</p>
+        <form method="get" action="">
+          <fieldset class="ui-field-contain">
+            <label for="address">Your Address:</label>
+            <input type="text" name="address" id="address" value="" placeholder="Your Address"/>
+            <label for="age">Your Age:</label>
+            <input type="number" name="age" id="age" value="" placeholder="Your Age"/>
+            <label for="email">Your email: </label>
+            <input type="email" name="email" id="email" value="" placeholder="Your Email"/>
+            <label for="birthdate">Your birthdate: </label>
+            <input type="date" name="birthdate" id="birthdate" value="" placeholder="Your Birthdate"/>
+          </fieldset>
+          <div class="ui-field-contain">
+            <label for="search">Search the site:</label>
+            <input type="search" name="search" id="search" value="" placeholder="Search the site"/>
+          </div>
+          <div class="ui-field-contain">
+            <label for="details">Tell us about you!</label>
+            <textarea id="details"></textarea>
+          </div>
+        </form>
+        </div>
+    </section>
+
+
+    <section id="winenotes" data-role="page">
+        <header data-role="header">
+            <h1>Wine Tasting Notes</h1>
+            <a href="#" data-rel="back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Back</a>
+        </header>
+        <div class="ui-content">
+        <p>This page is where you enter your own tasting notes.</p>
+        <form method="get" action="">
+            <fieldset data-role="controlgroup">
+                <legend>Select an option:</legend>
+                  <label for="rb1">Radio Button 1</label>
+                    <input type="radio" name="rb" id="rb1" value="rb1"/>
+                  <label for="rb2">Radio Button 2</label>
+                    <input type="radio" name="rb" id="rb2" value="rb2" checked="checked"/>
+                  <label for="rb3">Radio Button 3</label>
+                    <input type="radio" name="rb" id="rb3" value="rb3"/>
+                  <label for="rb4">Radio Button 4</label>
+                    <input type="radio" name="rb" id="rb4" value="rb4"/>
+            </fieldset>
+            <fieldset data-role="controlgroup" data-type="horizontal"  data-mini="true">
+                <legend>Select an option:</legend>
+                  <label for="rb5">Option 1</label>
+                    <input type="radio" name="rbtn" id="rb5" value="rb5" checked="checked"/>
+                  <label for="rb6">Option 2</label>
+                    <input type="radio" name="rbtn" id="rb6" value="rb6"/>
+                  <label for="rb7">Option 3</label>
+                    <input type="radio" name="rbtn" id="rb7" value="rb7"/>
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>Agree to the terms:</legend>
+                  <label for="cb1">I agree</label>
+                <input type="checkbox" name="cb1" id="cb1" />
+            </fieldset>
+            <fieldset data-role="controlgroup">
+                <legend>Choose Programming Fuel:</legend>
+                  <label for="pf1">Red Bull</label>
+                <input type="checkbox" name="pf1" id="pf1" />
+                  <label for="pf2">Mountain Dew</label>
+                <input type="checkbox" name="pf2" id="pf2" />
+                  <label for="pf3">Dr. Pepper</label>
+                <input type="checkbox" name="pf3" id="pf3" />
+            </fieldset>
+        </form>
+        </div>
+    </section>
+     <footer data-role="footer" data-position="fixed" data-theme="a">
+       <nav data-role="navbar">
+            <ul>
+                <li><a href="#firstpage" class="ui-btn ui-icon-plus ui-btn-icon-top ui-btn-active ui-state-persist">One</a></li>
+                <li><a href="#secondpage" class="ui-btn ui-icon-minus ui-btn-icon-top">Two</a></li>
+                <li><a href="#thirdpage" class="ui-btn ui-icon-check ui-btn-icon-top">Three</a></li>
+                <li><a href="#fourthpage" class="ui-btn ui-icon-grid ui-btn-icon-top">Four</a></li>
+                <li><a href="#fifthpage" class="ui-btn ui-icon-gear ui-btn-icon-top">Five</a></li>
+            </ul>
+          </nav>
+    </footer>
+</body>
+</html>

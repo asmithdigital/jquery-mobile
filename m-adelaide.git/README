@@ -1,0 +1,6 @@
+1) bower install
+	Use option - 1) jquery#~1.10.0 which resolved to 1.10.2 and is required by jquery-mobile-bower#1.4.2
+
+2) npm install
+
+Smithy: http://www.webdev.adelaide.edu.au/webteam/smithy-response1/m-adelaide/

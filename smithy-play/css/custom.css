@@ -1,0 +1,43 @@
+html, body, section, .ui-page, .ui-content{
+	background: #dde5ee !important;
+}
+
+.ui-header{
+	background: linear-gradient(#4491ca, #005a9c 100%);
+}
+
+.ui-header .ui-title{
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #004e8b;
+}
+
+.ui-header, .ui-footer{
+	border-width: 0px;
+}
+
+html .ui-bar-a .ui-btn {
+	color: #ffffff !important;
+	text-shadow: 1px 1px 1px #004e8b !important;
+	border-color: #a0131f !important;
+	background: linear-gradient(#ef3343, #a0131f);
+}
+html .ui-bar-a .ui-btn:hover, html .ui-bar-a .ui-btn.ui-btn-active{
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #004e8b;
+	border-color: #00599b !important;
+	background: linear-gradient(#042758, #00599b);
+}
+
+html .ui-header .ui-btn{
+	color: #ffffff !important;
+	text-shadow: 1px 1px 1px #004e8b !important;
+	border-color: #013f73 !important;
+	background: linear-gradient(#005a9c, #013f73);
+}
+
+html .ui-header .ui-btn:hover, html .ui-header .ui-btn.ui-btn-active{
+	color: #ffffff !important;
+	text-shadow: 1px 1px 1px #004e8b !important;
+	border-color: #013f73 !important;
+	background: linear-gradient(#013f73, #005a9c);
+}
